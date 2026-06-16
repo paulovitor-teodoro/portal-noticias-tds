@@ -8,11 +8,15 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view("home");
+        return view('home');
     }
 
-    public function contato()
+    public function visualizarNoticias()
     {
-        return view("contato");
+        return view('visualizar-noticias');
+    }
+
+    public function contato(){
+        return view('contato');
     }
 }
