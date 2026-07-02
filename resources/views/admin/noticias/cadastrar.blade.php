@@ -15,7 +15,8 @@
             </div>
             <div class="p-6">
                 
-                <form action="#" method="post">
+                <form action="{{ route('admin.noticias.armazenar') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     @include('admin.noticias._form')
                 </form>
             </div>

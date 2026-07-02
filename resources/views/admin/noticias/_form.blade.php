@@ -1,8 +1,21 @@
+@if($errors->any())
+<div class="mb-6 text-red-500">
+    <p class="font-semibold">Verifique os erros abaixo:</p>
+    <ul>
+        @foreach ($errors->all() as $erro)   
+        <li>{{ $erro }}</li>
+         @endforeach
+    </ul>
+</div>
+@endif
+
 <div class="mb-4">
     <label for="categoria_id" class="form-label">Categoria *</label>
     <select name="categoria_id" id="categoria_id" class= "form-control">
         <option></option>
-        <option value="1">Tecnologia</option>
+        @foreach ($categorias as $id => $nome)
+          <option value="{{ $id }}">{{ $nome }}</option>
+        @endforeach
     </select>
 </div>
 
@@ -30,11 +43,11 @@
     <label>Situação</label>
     <div>
         <label>
-            <input type="radio" name="ativo" value="1">
+            <input type="radio" name="status" value="1">
             Publicado
         </label>
         <label>
-            <input type="radio" name="ativo" value="0" checked>
+            <input type="radio" name="status" value="0" checked>
             Rascunho
         </label>
     </div>

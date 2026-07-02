@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('resumo');
             $table->longText('conteudo');
             $table->string('imagem');
-            $table->boolean('ativo')->default(false);
+            $table->boolean('status')->default(false);
 
             $table->foreignId('categoria_id')->constrained();
             $table->foreignId('usuario_id')->constrained();
